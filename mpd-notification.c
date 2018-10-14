@@ -418,12 +418,12 @@ int main(int argc, char ** argv) {
 				goto nonotification;
 
 #ifdef HAVE_SYSTEMD
-			sd_notifyf(0, "READY=1\nSTATUS=%s: %s", state == MPD_STATE_PLAY ? "Playing" : "Paused", title);
+			sd_notifyf(0, "READY=1\nSTATUS=%s: %s", state == MPD_STATE_PLAY ? "" : "[Paused]\n", title);
 #endif
 
 			/* initial allocation and string termination */
 			notifystr = strdup("");
-			notifystr = append_string(notifystr, TEXT_PLAY_PAUSE_STATE, 0, state == MPD_STATE_PLAY ? "Playing": "Paused");
+			notifystr = append_string(notifystr, TEXT_PLAY_PAUSE_STATE, 0, state == MPD_STATE_PLAY ? "": "[Paused]\n");
 			notifystr = append_string(notifystr, TEXT_PLAY_PAUSE_TITLE, 0, title);
 
 			if ((artist = mpd_song_get_tag(song, MPD_TAG_ARTIST, 0)) != NULL)
