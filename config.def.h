@@ -19,7 +19,7 @@
 #define TEXT_TOPIC		"MPD Notification"
 #define TEXT_PLAY_PAUSE_STATE	"%s"
 #define TEXT_PLAY_PAUSE_TITLE	"<b>%s</b>"
-#define TEXT_PLAY_PAUSE_ARTIST	"<i>%s</i>"
+#define TEXT_PLAY_PAUSE_ARTIST	"%s"
 #define TEXT_PLAY_PAUSE_ALBUM	""
 #define TEXT_STOP		"Stopped playback"
 #define TEXT_NONE		"No action received yet."
